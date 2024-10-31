@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"); //COLORS
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+//COLORS
+
+$mainAccentColor: #ffc220;
+$mainAccentColorHover: #e9b21c;
+$mainColor: #002242;
+$mainColorHover: #001a30;
+$bgSpecColor: #f3f4f6;
+$darkerBgSpecColor: #e5e7ea;
+$footerColor: #061931;
+$footerTextColor: #9da6b3;
+$offerPColor: #727272;
+$verticalLineColor: #ececec;
+$appleColor: #d3dade;
+$samsungColor: #dae8dd;
+$boxShadow: #bfbfbf;
+$hoverForEan: #e1e1e1;
+$trending: #e0e0e0;
+$white: #ffffff;
+$dark: #171717;
+$lightBg: rgb(242, 242, 242);
+$black: #000000;
+$topArikalColor: #4072ae;
+$sokCenaColor: #f07800;
+$discountRedColor: #bf281b;
+$yellowButtonColor: #ffca2d;
+$naStanjuColor: #92bf5b;
+$delivetyBorderColor: rgba(39, 174, 96, 0.2);
+$deliveryBgColor: rgba(111, 207, 151, 0.1);
+$largeCube: #fdf1d2;
+$smallCube: #fadb8e;
+$clockBg: #f0f0f0;
+$ps4Color: #2c61cd;
+$ps5Color: #2139a4;
+$xboxColor: #45962e;
+$careerBlack: #222222;
+
+//TYPOGRAPHY
+$mainFont: "Lato", sans-serif;
+$mainFontSize: 15px;
+$mainFontWeight: 400;
+$clockFont: "Bebas Neue", sans-serif;
+$clockFontSize: 22px;
+
+//CALC
+
+$hamburgerHeight: 15px;
+$xWidth: 21px;
+
+$themes: (
+  light: (
+    text: $black,
+    bg: $lightBg,
+    brandBg: $mainColor,
+  ),
+  dark: (
+    text: $white,
+    bg: $dark,
+    brandBg: $dark,
+  ),
+);

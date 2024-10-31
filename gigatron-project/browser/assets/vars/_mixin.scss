@@ -1,0 +1,239 @@
+@import "./vars";
+
+@keyframes extendInfo {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@mixin extendedView {
+  .extendedView {
+    animation: extendInfo forwards 0.4s ease;
+    border: 1px solid #dddddd;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 60%;
+    height: 75px;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      padding: 10px;
+
+      li {
+        font-size: 0.8rem;
+        width: 50%;
+        padding: 5px 0;
+      }
+    }
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 65px;
+    left: 95px;
+    transition: all 0.3s ease;
+  }
+
+  .productTitle {
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    width: 30%;
+
+    h4 {
+      // width: 177px;
+      padding: 10px 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: clip;
+      display: block;
+    }
+  }
+  .cardBottom {
+    position: absolute;
+    top: 135px;
+    right: 20px;
+    width: 30%;
+    height: unset;
+
+    .counter {
+      position: absolute;
+      top: 90px;
+      border: 1px solid #dddddd;
+      width: 100%;
+      padding: 10px 20px;
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+
+      .showCounter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        border: none;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        font-size: 1.5rem;
+        text-align: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .cartContainer {
+      position: absolute;
+      top: 160px;
+      width: 100%;
+      border-radius: 0.5rem;
+      transition-delay: 2s;
+      transition: width 0.3s ease;
+    }
+  }
+}
+
+@mixin buttonLoginReset {
+  width: 100%;
+  padding: 12.25px 0;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: $white;
+  background-color: $mainColor;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    animation: clickEffect 0.3s ease;
+  }
+}
+
+@mixin inputWithAnimation($padding, $fSize, $transformSize, $margin) {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  margin: 0 0 $margin 0;
+
+  label {
+    position: absolute;
+    left: 15px;
+    color: $black;
+    font-weight: 400;
+    font-size: $fSize;
+    pointer-events: none;
+    transform: translateY($transformSize);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  input {
+    width: 100%;
+    border: solid 1px #bcbcbc;
+    border-radius: 0.5rem;
+    background: none;
+    padding: $padding;
+    font-size: $fSize;
+    color: $black;
+    outline: none;
+  }
+  input:focus,
+  input:valid {
+    outline: none;
+    border: 1px solid #9e9e9e;
+  }
+
+  input:focus ~ label,
+  input:valid ~ label {
+    transform: translateX(-10px) translateY(-50%) scale(0.8);
+    padding: 0.2em;
+    color: $black;
+    background-color: $white;
+  }
+}
+
+@mixin notification($mainColor, $secondColor) {
+  width: 100%;
+  height: 0;
+  padding: 0;
+  margin: 10px 0;
+  background-color: $secondColor;
+  border-width: 0;
+  border-color: $mainColor;
+  border-style: solid;
+  display: none;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: $mainColor;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: expires 10s linear forwards;
+  }
+
+  small {
+    font-size: 0.8rem;
+  }
+
+  i {
+    margin: 0 0 0 10px;
+    cursor: pointer;
+  }
+}
+
+@mixin notificationWishlist($mainColor, $secondColor) {
+  max-width: 90%;
+  height: 0;
+  padding: 0;
+  margin: 10px 0;
+  background-color: $secondColor;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: fixed;
+  bottom: 4rem;
+  right: calc((100vw - 90%) / 2);
+  left: calc((100vw - 90%) / 2);
+  z-index: 100;
+  border-radius: 10px;
+
+  small {
+    font-size: 0.8rem;
+    color: $white;
+  }
+
+  i {
+    margin: 0 0 0 10px;
+    color: $white;
+    cursor: pointer;
+  }
+}
